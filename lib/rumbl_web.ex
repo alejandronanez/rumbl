@@ -23,14 +23,16 @@ defmodule RumblWeb do
 
       import Plug.Conn
       import RumblWeb.Gettext
+      import RumblWeb.Auth, only: [authenticate_user: 2]
       alias RumblWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/rumbl_web/templates",
-                        namespace: RumblWeb
+      use Phoenix.View,
+        root: "lib/rumbl_web/templates",
+        namespace: RumblWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
@@ -49,6 +51,7 @@ defmodule RumblWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import RumblWeb.Auth, only: [authenticate_user: 2]
     end
   end
 
