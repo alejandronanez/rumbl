@@ -70,4 +70,10 @@ defmodule Rumbl.Multimedia do
   defp preload_user(video_or_videos) do
     Repo.preload(video_or_videos, :user)
   end
+
+  def list_alphabetical_categories do
+    Category
+    |> Category.alphabetical()
+    |> Repo.all()
+  end
 end
