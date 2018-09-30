@@ -18,6 +18,8 @@ defmodule Rumbl.TestHelpers do
         }
       })
       |> Accounts.register_user()
+
+    user
   end
 
   def video_fixture(%Accounts.User{} = user, attrs \\ %{}) do
