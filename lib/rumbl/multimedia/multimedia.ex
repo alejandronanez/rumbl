@@ -12,7 +12,7 @@ defmodule Rumbl.Multimedia do
 
   def list_videos do
     Video
-    |> Repo.all(Video)
+    |> Repo.all()
     |> preload_user
   end
 
